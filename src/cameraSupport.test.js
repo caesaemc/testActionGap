@@ -6,7 +6,7 @@ describe('getCameraSupportError', () => {
     const error = getCameraSupportError({
       isSecureContext: false,
       mediaDevices: undefined,
-      location: { hostname: '106.14.249.119', protocol: 'http:' },
+      location: { hostname: '203.0.113.10', protocol: 'http:' },
     });
 
     expect(error).toContain('HTTPS');

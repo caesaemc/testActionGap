@@ -24,10 +24,10 @@ Gesture Heart Field 是一个可部署为静态网页的互动视觉应用。页
 
 ## 在线部署状态
 
-当前已部署到云服务器：
+当前已部署到云服务器，具体地址请在私有部署记录中维护：
 
 ```text
-http://106.14.249.119/
+http://<SERVER_IP>/
 ```
 
 注意：公网 HTTP 页面可以展示粒子效果和模拟手势，但浏览器不会开放真实摄像头权限。真实摄像头手势识别需要：
@@ -101,7 +101,7 @@ npm run build
 上传：
 
 ```bash
-scp -r dist/* root@106.14.249.119:/var/www/gesture-heart/
+scp -r dist/* root@<SERVER_IP>:/var/www/gesture-heart/
 ```
 
 Nginx 示例配置：
@@ -137,7 +137,7 @@ systemctl reload nginx
 
 备案完成后建议继续完成：
 
-- 将域名 A 记录解析到 `106.14.249.119`
+- 将域名 A 记录解析到你的云服务器公网 IP
 - 把 Nginx `server_name` 改为正式域名
 - 使用 Certbot、acme.sh 或 Caddy 配置 HTTPS
 - 通过 `https://your-domain.com` 测试摄像头授权
@@ -180,10 +180,10 @@ Gesture Heart Field is a static, browser-based interactive visual app. It render
 
 ## Live Deployment
 
-Current server deployment:
+Current server deployment is maintained outside this public README:
 
 ```text
-http://106.14.249.119/
+http://<SERVER_IP>/
 ```
 
 Public HTTP can render the visual effect and simulated gestures, but real camera access requires a secure browser context:
@@ -244,14 +244,14 @@ This project does not require a backend service. Build locally and upload `dist/
 Example:
 
 ```bash
-scp -r dist/* root@106.14.249.119:/var/www/gesture-heart/
+scp -r dist/* root@<SERVER_IP>:/var/www/gesture-heart/
 ```
 
 For real camera access in production, serve the site over HTTPS.
 
 ## Next Steps
 
-- Point a registered domain to `106.14.249.119`
+- Point a registered domain to your cloud server public IP
 - Update Nginx `server_name`
 - Configure HTTPS
 - Test real camera permissions on the HTTPS domain

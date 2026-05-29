@@ -10,16 +10,16 @@
 
 ## 已完成部署
 
-- 云服务器 IP：`106.14.249.119`
+- 云服务器 IP：请在私有部署记录中维护，不写入公开仓库
 - 系统：CentOS 7
 - Web 服务：Nginx
 - 静态文件目录：`/var/www/gesture-heart`
-- 当前访问地址：`http://106.14.249.119/`
+- 当前访问地址：`http://<SERVER_IP>/`
 
 ## 后续必须完成
 
 1. 等域名备案完成。
-2. 在 DNS 控制台添加 A 记录，指向 `106.14.249.119`。
+2. 在 DNS 控制台添加 A 记录，指向云服务器公网 IP。
 3. 把 Nginx 的 `server_name` 从 IP 改成备案后的域名。
 4. 申请 HTTPS 证书，例如使用 Certbot。
 5. 使用 `https://域名` 访问页面，验证浏览器能弹出摄像头授权。
@@ -57,7 +57,7 @@ npm run build
 上传静态文件到服务器：
 
 ```bash
-scp -r dist/* root@106.14.249.119:/var/www/gesture-heart/
+scp -r dist/* root@<SERVER_IP>:/var/www/gesture-heart/
 ```
 
 服务器重载 Nginx：
